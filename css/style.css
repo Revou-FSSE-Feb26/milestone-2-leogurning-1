@@ -1,0 +1,99 @@
+/* ─── Root Variables ────────────────────────────────────────── */
+:root {
+  --pink: #ff8fab;
+  --mint: #7ec8a4;
+  --peach: #ffb347;
+  --lavender: #b39ddb;
+  --yellow: #ffe082;
+  --sky: #a8dadc;
+  --bg: #fff5f9;
+  --card: #ffffff;
+  --text: #4a4a68;
+  --muted: #9e9eb8;
+}
+
+/* ─── Base ──────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Nunito", sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ─── Typography helpers ─────────────────────────────────────── */
+.font-display {
+  font-family: "Fredoka One", cursive !important;
+}
+.font-body {
+  font-family: "Nunito", sans-serif !important;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--pink) 0%, var(--lavender) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fff0f5;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--pink);
+  border-radius: 10px;
+}
+
+/* ─── Navbar ─────────────────────────────────────────────────── */
+#navbar {
+  transition:
+    background 0.3s,
+    box-shadow 0.3s;
+}
+
+/* ─── Hero decorations ──────────────────────────────────────── */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+  opacity: 0.45;
+}
+.blob-pink {
+  background: var(--pink);
+  width: 400px;
+  height: 400px;
+}
+.blob-mint {
+  background: var(--mint);
+  width: 320px;
+  height: 320px;
+}
+.blob-lavender {
+  background: var(--lavender);
+  width: 280px;
+  height: 280px;
+}
+
+/* ─── Float animations ──────────────────────────────────────── */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(4deg);
+  }
+}
+.float-1 {
+  animation: float 3.2s ease-in-out infinite;
+}
