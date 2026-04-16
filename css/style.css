@@ -158,3 +158,8 @@ body {
 .wave-divider svg {
   display: block;
 }
+
+/* ─── Footer ─────────────────────────────────────────────────── */
+footer a:hover {
+  color: var(--pink);
+}

@@ -88,3 +88,6 @@ contactForm?.addEventListener("submit", (e) => {
   );
   contactForm.reset();
 });
+
+// Footer year auto-update
+document.getElementById("year").textContent = new Date().getFullYear();
