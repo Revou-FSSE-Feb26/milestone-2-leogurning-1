@@ -125,6 +125,7 @@
 
     <!-- MAIN CONTENT -->
     <main>
+      <!-- HERO SECTION -->
       <section
         id="home"
         class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden"
@@ -204,7 +205,202 @@
           <span class="text-xl animate-bounce text-pink">↓</span>
         </div>
       </section>
+      <!-- ./HERO SECTION -->
 
+      <!-- GAMES SECTION -->
+      <section id="games" class="py-24 px-6 relative">
+        <div class="max-w-6xl mx-auto">
+          <!-- Section header -->
+          <div class="text-center mb-16 scroll-reveal">
+            <span
+              class="inline-block bg-mint/20 text-mint border border-mint/40 rounded-full px-4 py-1 text-sm font-bold font-body mb-4"
+            >
+              🎮 Our Games
+            </span>
+            <h2 class="font-display text-5xl sm:text-6xl gradient-text mb-4">
+              Pick Your Game!
+            </h2>
+            <p class="font-body text-lg text-[#6B6B8A] max-w-lg mx-auto">
+              Three hand-crafted mini-games designed to keep you entertained.
+              Compete against yourself and others!
+            </p>
+          </div>
+
+          <!-- Game cards grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1: Number Guessing -->
+            <a
+              href="./games/number-guessing.html"
+              class="game-card bg-white rounded-3xl shadow-lg overflow-hidden group scroll-reveal border-2 border-mint/20 hover:border-mint/60"
+              style="transition-delay: 0.2s"
+            >
+              <div
+                class="h-48 flex items-center justify-center relative overflow-hidden"
+                style="
+                  background: linear-gradient(135deg, #d6f5e8 0%, #b8edd8 100%);
+                "
+              >
+                <div class="flex items-center gap-3 text-5xl relative z-10">
+                  <span class="float-1">🔢</span>
+                  <span class="font-display text-6xl text-mint/70">?</span>
+                  <span class="float-3">🎯</span>
+                </div>
+                <div
+                  class="absolute -bottom-6 -right-6 w-24 h-24 bg-mint/20 rounded-full"
+                ></div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <span
+                    class="bg-mint/20 text-emerald-700 text-xs font-bold font-body px-3 py-1 rounded-full"
+                    >PUZZLE</span
+                  >
+                  <span
+                    class="bg-peach/30 text-orange-700 text-xs font-bold font-body px-3 py-1 rounded-full"
+                    >🧠 BRAIN</span
+                  >
+                </div>
+                <h3 class="font-display text-3xl text-[#4A4A68] mb-2">
+                  Number Guessing
+                </h3>
+                <p
+                  class="font-body text-[#6B6B8A] text-sm leading-relaxed mb-4"
+                >
+                  Crack the secret number in just 5 tries! Use hot &amp; cold
+                  hints to zero in. How many rounds can you win?
+                </p>
+                <div class="flex items-center justify-between">
+                  <div
+                    class="flex gap-3 text-xs font-body font-semibold text-muted"
+                  >
+                    <span>5️⃣ Attempts</span>
+                    <span>1️⃣-🔟0️⃣ Range</span>
+                  </div>
+                  <span
+                    class="font-display text-mint text-lg group-hover:translate-x-1 transition-transform"
+                    >Play →</span
+                  >
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 2: Rock Paper Scissors -->
+            <a
+              href="./games/rock-paper-scissors.html"
+              class="game-card bg-white rounded-3xl shadow-lg overflow-hidden group scroll-reveal border-2 border-pink/20 hover:border-pink/60"
+            >
+              <div
+                class="h-48 flex items-center justify-center text-7xl gap-4 relative overflow-hidden"
+                style="
+                  background: linear-gradient(135deg, #ffe8f0 0%, #ffd6e7 100%);
+                "
+              >
+                <span class="float-1 text-6xl">🪨</span>
+                <span class="float-2 text-6xl">📄</span>
+                <span class="float-3 text-6xl">✂️</span>
+                <!-- Decorative circle -->
+                <div
+                  class="absolute -bottom-6 -right-6 w-24 h-24 bg-pink/20 rounded-full"
+                ></div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <span
+                    class="bg-pink/15 text-pink text-xs font-bold font-body px-3 py-1 rounded-full"
+                    >STRATEGY</span
+                  >
+                  <span
+                    class="bg-lemon/40 text-amber-700 text-xs font-bold font-body px-3 py-1 rounded-full"
+                    >🔥 POPULAR</span
+                  >
+                </div>
+                <h3 class="font-display text-3xl text-[#4A4A68] mb-2">
+                  Rock, Paper, Scissors
+                </h3>
+                <p
+                  class="font-body text-[#6B6B8A] text-sm leading-relaxed mb-4"
+                >
+                  Battle the computer in the classic showdown! Track your wins,
+                  losses, and draws. Can you outsmart the CPU?
+                </p>
+                <div class="flex items-center justify-between">
+                  <div
+                    class="flex gap-3 text-xs font-body font-semibold text-muted"
+                  >
+                    <span>👥 vs CPU</span>
+                    <span>🏆 Leaderboard</span>
+                  </div>
+                  <span
+                    class="font-display text-pink text-lg group-hover:translate-x-1 transition-transform"
+                    >Play →</span
+                  >
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 3: Avoid Falling Objects -->
+            <a
+              href="./games/avoid-falling-objects.html"
+              class="game-card bg-white rounded-3xl shadow-lg overflow-hidden group scroll-reveal border-2 border-lavender/20 hover:border-lavender/60"
+              style="transition-delay: 0.1s"
+            >
+              <div
+                class="h-48 flex items-center justify-center relative overflow-hidden"
+                style="
+                  background: linear-gradient(135deg, #ede0ff 0%, #d8c8ff 100%);
+                "
+              >
+                <div class="text-center relative z-10">
+                  <div class="text-4xl mb-1 float-1">⭐</div>
+                  <div class="text-5xl float-2">🧑</div>
+                  <div class="absolute -top-4 left-8 text-3xl float-3">🔥</div>
+                  <div class="absolute -top-2 right-8 text-3xl float-4">💎</div>
+                </div>
+                <div
+                  class="absolute -bottom-6 -left-6 w-24 h-24 bg-lavender/20 rounded-full"
+                ></div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <span
+                    class="bg-lavender/20 text-purple-700 text-xs font-bold font-body px-3 py-1 rounded-full"
+                    >ACTION</span
+                  >
+                  <span
+                    class="bg-sky/30 text-cyan-700 text-xs font-bold font-body px-3 py-1 rounded-full"
+                    >⚡ FAST-PACED</span
+                  >
+                </div>
+                <h3 class="font-display text-3xl text-[#4A4A68] mb-2">
+                  Avoid Falling Objects
+                </h3>
+                <p
+                  class="font-body text-[#6B6B8A] text-sm leading-relaxed mb-4"
+                >
+                  Dodge the falling chaos! Move left and right to survive as
+                  long as possible. Speed increases the longer you last!
+                </p>
+                <div class="flex items-center justify-between">
+                  <div
+                    class="flex gap-3 text-xs font-body font-semibold text-muted"
+                  >
+                    <span>⌨️ Arrow Keys</span>
+                    <span>📱 Touch</span>
+                  </div>
+                  <span
+                    class="font-display text-lavender text-lg group-hover:translate-x-1 transition-transform"
+                    >Play →</span
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- /grid -->
+        </div>
+      </section>
+      <!-- ./GAMES SECTION -->
+
+      <!-- HOW TO PLAY SECTION -->
       <section
         id="howto"
         class="py-16 px-6"
@@ -252,6 +448,7 @@
           </div>
         </div>
       </section>
+      <!-- ./HOW TO PLAY SECTION -->
     </main>
     <!-- ./MAIN CONTENT -->
 
