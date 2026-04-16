@@ -141,3 +141,20 @@ body {
 .modal-card {
   animation: modal-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
+
+/* ─── Contact form ───────────────────────────────────────────── */
+.form-input {
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.form-input:focus {
+  border-color: var(--lavender);
+  box-shadow: 0 0 0 3px rgba(179, 157, 219, 0.25);
+  outline: none;
+}
+
+/* ─── Section divider wave ───────────────────────────────────── */
+.wave-divider svg {
+  display: block;
+}
