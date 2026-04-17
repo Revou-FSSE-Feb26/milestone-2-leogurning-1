@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guessing — LeonFun</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              pink: "#FF8FAB",
+              mint: "#7EC8A4",
+              peach: "#FFB347",
+              lavender: "#B39DDB",
+              lemon: "#FFE082",
+              sky: "#A8DADC",
+              cream: "#FFF5F9",
+            },
+            fontFamily: {
+              display: ['"Fredoka One"', "cursive"],
+              body: ["Nunito", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="font-body bg-cream text-[#4A4A68] min-h-screen">
+    <!-- ─── Top bar ─── -->
+    <header
+      class="bg-white/80 backdrop-blur-sm border-b border-mint/20 px-6 py-3 flex items-center justify-between sticky top-0 z-30 shadow-sm"
+    >
+      <a
+        href="../index.html"
+        class="flex items-center gap-2 bg-mint/15 hover:bg-mint/25 text-emerald-700 font-display text-lg px-4 py-2 rounded-full transition-colors duration-200"
+      >
+        ← Back to Home
+      </a>
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">🔢🎯</span>
+        <span class="font-display text-2xl gradient-text hidden sm:block"
+          >Number Guessing</span
+        >
+      </div>
+      <div class="w-28"></div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8"></main>
+
+    <footer
+      class="mt-12 py-6 text-center font-body text-xs text-muted border-t border-mint/10"
+    >
+      © <span id="year"></span> LeonFun —
+      <a
+        href="mailto:admin@leonfun.com"
+        class="hover:text-pink transition-colors"
+        >admin@leonfun.com</a
+      >
+    </footer>
+
+    <script type="module" src="../js/guess.js"></script>
+  </body>
+</html>
