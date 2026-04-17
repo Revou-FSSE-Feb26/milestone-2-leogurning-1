@@ -123,6 +123,7 @@
 
       <!-- ══ GAME SECTION ════ -->
       <section id="game-section" class="hidden">
+        <!-- .GRID GAME AREA -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <!-- Main game panel -->
           <div class="lg:col-span-2 space-y-5">
@@ -304,9 +305,28 @@
             </div>
             <!-- ./Collapsible Game Instructions -->
           </div>
-
           <!-- ./Main game panel -->
+
+          <!-- Leaderboard -->
+          <div class="lg:col-span-1">
+            <div
+              class="bg-white rounded-3xl shadow-lg p-6 border border-mint/20 sticky top-24 lb-card"
+            >
+              <h2 class="font-display text-2xl text-mint mb-1">
+                🏆 Leaderboard
+              </h2>
+              <p class="font-body text-xs text-muted mb-4">
+                Ranked by most rounds won
+              </p>
+              <div id="leaderboard-list">
+                <p class="text-center text-gray-400 font-body py-6 text-sm">
+                  🎮 No scores yet — be the first champion!
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+        <!-- ./GRID GAME AREA -->
       </section>
       <!-- ══ ./GAME SECTION ═══= -->
     </main>
