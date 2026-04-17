@@ -23,7 +23,7 @@ leonfun/
 │   ├── rps.js                        # Rock Paper Scissors game logic
 │   ├── avoid.js                      # Avoid Falling Objects game loop
 │   └── guess.js                      # Number Guessing game logic
-└── games/
+└── pages/
     ├── rock-paper-scissors.html      # RPS game page
     ├── avoid-falling-objects.html    # Avoid game page
     └── number-guessing.html          # Guess game page
