@@ -47,6 +47,14 @@ nickInput?.addEventListener("keydown", (e) => {
   if (e.key === "Enter") startBtn.click();
 });
 
+/* ─── Submit guess ───────────────────────────────────────────── */
+submitBtn?.addEventListener("click", makeGuess);
+guessInput?.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") makeGuess();
+});
+
+document.getElementById("new-round-btn")?.addEventListener("click", newRound);
+
 /* ─── New round ──────────────────────────────────────────────── */
 function newRound() {
   target = Math.floor(Math.random() * (MAX - MIN + 1)) + MIN;
@@ -66,10 +74,71 @@ function newRound() {
   roundResultEl.classList.add("hidden");
   updateBar();
 }
+
+/* ─── Core guess logic ───────────────────────────────────────── */
+function makeGuess() {
+  if (!gameActive) return;
+
+  const raw = guessInput.value.trim();
+  const guess = parseInt(raw, 10);
+
+  if (!raw || isNaN(guess) || guess < MIN || guess > MAX) {
+    showModal(
+      "Invalid Number",
+      `Please enter a whole number between ${MIN} and ${MAX}.`,
+      "error",
+    );
+    return;
+  }
+
+  attemptsLeft--;
+  addHistory(guess, guess < target ? "low" : guess > target ? "high" : "exact");
+  attemptsEl.textContent = attemptsLeft;
+  updateBar();
+  guessInput.value = "";
+
+  if (guess === target) {
+    totalWins++;
+    scoreEl.textContent = totalWins;
+    // SAVE TO Leaderboard
+
+    setHint(`🎉 Correct! The number was ${target}!`, "text-green-600");
+    endRound("🎉 You guessed it! Play another round?");
+    return;
+  }
+
+  if (attemptsLeft === 0) {
+    setHint(`💔 Out of tries! The number was ${target}.`, "text-red-500");
+    endRound("😢 Better luck next time! Try again?");
+    return;
+  }
+
+  if (guess < target) {
+    setHint("📈 Too Low! Go higher.", "text-blue-500");
+  } else {
+    setHint("📉 Too High! Go lower.", "text-orange-500");
+  }
+
+  guessInput.focus();
+}
+
 /* ─── Helpers ────────────────────────────────────────────────── */
 function setHint(text, colorClass) {
   hintEl.textContent = text;
   hintEl.className = `font-display text-xl my-2 ${colorClass}`;
+}
+
+function addHistory(guess, type) {
+  const span = document.createElement("span");
+  const styles = {
+    low: "bg-blue-100 text-blue-700",
+    high: "bg-red-100 text-red-600",
+    exact: "bg-green-100 text-green-700 font-bold",
+  };
+  const icons = { low: "↑", high: "↓", exact: "✓" };
+  span.className = `inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-body font-semibold ${styles[type]}`;
+  span.textContent = `${icons[type]} ${guess}`;
+  historyEl.appendChild(span);
 }
 
 function updateBar() {
@@ -79,6 +148,14 @@ function updateBar() {
   attBar.className = `h-2 rounded-full transition-all duration-500 ${
     pct > 60 ? "bg-green-400" : pct > 30 ? "bg-yellow-400" : "bg-red-400"
   }`;
+}
+
+function endRound(msg) {
+  gameActive = false;
+  guessInput.disabled = true;
+  submitBtn.disabled = true;
+  roundResultEl.textContent = msg;
+  roundResultEl.classList.remove("hidden");
 }
 
 // Instructions Reveal Toggle
