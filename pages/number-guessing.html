@@ -59,7 +59,101 @@
       <div class="w-28"></div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 py-8"></main>
+    <main class="max-w-5xl mx-auto px-4 py-8">
+      <!-- ══ NICKNAME INPUT SECTION════ -->
+      <section
+        id="nickname-section"
+        class="flex items-center justify-center min-h-[60vh]"
+      >
+        <div
+          class="bg-white rounded-3xl shadow-xl p-10 max-w-md w-full text-center border-2 border-mint/20"
+        >
+          <div class="text-6xl mb-4">🔢</div>
+          <h2 class="font-display text-4xl gradient-text mb-2">
+            Number Guessing
+          </h2>
+          <p class="font-body text-[#6B6B8A] mb-8 text-sm leading-relaxed">
+            Can you crack the secret number in just 5 tries? Use the hints to
+            zero in on the answer!
+          </p>
+
+          <label
+            for="nickname-input"
+            class="block font-body font-bold text-[#4A4A68] mb-2 text-left text-sm"
+          >
+            Your Nickname
+          </label>
+          <input
+            id="nickname-input"
+            type="text"
+            maxlength="20"
+            placeholder="e.g. NumberWizard"
+            class="form-input w-full border-2 border-mint/40 rounded-xl px-4 py-3 font-body text-[#4A4A68] placeholder-gray-300 bg-cream mb-6 text-center text-lg"
+          />
+
+          <button
+            id="start-btn"
+            class="w-full bg-mint text-white font-display text-2xl py-4 rounded-full shadow-lg hover:bg-opacity-90 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+          >
+            Start Guessing! 🎯
+          </button>
+
+          <!-- Instructions -->
+          <div
+            class="mt-8 text-left bg-mint/8 rounded-2xl p-5 border border-mint/20"
+          >
+            <h3 class="font-display text-xl text-mint mb-3">📖 How to Play</h3>
+            <ul class="font-body text-sm text-[#6B6B8A] space-y-1.5">
+              <li>
+                🔢 A secret number between <strong>1 and 100</strong> is chosen
+              </li>
+              <li>
+                5️⃣ You have <strong>5 attempts</strong> to guess correctly
+              </li>
+              <li>📈 <strong>"Too Low"</strong> means guess higher</li>
+              <li>📉 <strong>"Too High"</strong> means guess lower</li>
+              <li>
+                🏆 Each round you win adds <strong>+1 to your score</strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- ══ ./NICKNAME INPUT SECTION════ -->
+
+      <!-- ══ GAME SECTION ════ -->
+      <section id="game-section" class="hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Main game panel -->
+          <div class="lg:col-span-2 space-y-5">
+            <!-- Player + score banner -->
+            <div
+              class="bg-white rounded-2xl shadow-md px-6 py-3 flex items-center justify-between border border-mint/15"
+            >
+              <div>
+                <span class="font-body text-xs text-muted font-semibold"
+                  >Player</span
+                >
+                <div class="font-display text-xl text-mint" id="nick-display">
+                  Player
+                </div>
+              </div>
+              <div class="text-center">
+                <span
+                  class="font-body text-xs text-muted font-semibold uppercase tracking-wide"
+                  >Total Wins</span
+                >
+                <div id="score-display" class="font-display text-4xl text-pink">
+                  0
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ./Main game panel -->
+        </div>
+      </section>
+      <!-- ══ ./GAME SECTION ════ -->
+    </main>
 
     <footer
       class="mt-12 py-6 text-center font-body text-xs text-muted border-t border-mint/10"
