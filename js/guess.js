@@ -1,5 +1,5 @@
 // guess.js — Number Guessing Game (ES Module)
-import { showModal } from "./utils.js";
+import { saveScore, renderLeaderboard, showModal } from "./utils.js";
 
 /* ─── Constants ──────────────────────────────────────────────── */
 const GAME_KEY = "guess";
@@ -40,6 +40,7 @@ startBtn?.addEventListener("click", () => {
   nickDisplay.textContent = nickname;
   nicknameSection.classList.add("hidden");
   gameSection.classList.remove("hidden");
+  renderLeaderboard(GAME_KEY, "leaderboard-list", nickname);
   newRound();
 });
 
@@ -100,7 +101,8 @@ function makeGuess() {
   if (guess === target) {
     totalWins++;
     scoreEl.textContent = totalWins;
-    // SAVE TO Leaderboard
+    saveScore(GAME_KEY, nickname, totalWins);
+    renderLeaderboard(GAME_KEY, "leaderboard-list", nickname);
 
     setHint(`🎉 Correct! The number was ${target}!`, "text-green-600");
     endRound("🎉 You guessed it! Play another round?");
