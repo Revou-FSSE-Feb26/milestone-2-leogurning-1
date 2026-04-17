@@ -231,6 +231,78 @@
               <!-- ./Round result + new round -->
             </div>
             <!-- ./Game card -->
+
+            <!-- Collapsible Game Instructions -->
+            <div
+              class="rounded-2xl border-2 border-mint/25 overflow-hidden shadow-sm"
+            >
+              <button
+                id="instructions-toggle"
+                class="w-full flex items-center justify-between px-5 py-3 bg-mint/10 hover:bg-mint/20 transition-colors duration-200 cursor-pointer text-left"
+              >
+                <span class="font-display text-xl text-mint"
+                  >📖 How to Play</span
+                >
+                <span
+                  id="instructions-chevron"
+                  class="text-mint text-xl font-bold transition-transform duration-300"
+                  >▾</span
+                >
+              </button>
+              <div
+                id="instructions-body"
+                class="bg-mint/5 px-5 overflow-hidden transition-all duration-300"
+                style="max-height: 0"
+              >
+                <ul class="font-body text-sm text-[#6B6B8A] space-y-2 py-4">
+                  <li class="flex items-start gap-2">
+                    🔢
+                    <span
+                      >A secret number between <strong>1 and 100</strong> is
+                      randomly chosen each round</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    5️⃣
+                    <span
+                      >You have exactly <strong>5 attempts</strong> to guess the
+                      correct number</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    📈
+                    <span
+                      ><strong>"Too Low"</strong> (↑) means the secret number is
+                      higher than your guess</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    📉
+                    <span
+                      ><strong>"Too High"</strong> (↓) means the secret number
+                      is lower than your guess</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    🏆
+                    <span
+                      >Each round you win adds
+                      <strong>+1 to your total score</strong> on the
+                      leaderboard</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    💡
+                    <span
+                      ><strong>Strategy:</strong> Start with
+                      <strong>50</strong>, then halve the remaining range each
+                      time — every guess counts with only 5 tries!</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- ./Collapsible Game Instructions -->
           </div>
 
           <!-- ./Main game panel -->
