@@ -148,11 +148,95 @@
                 </div>
               </div>
             </div>
+            <!-- ./Player + score banner -->
+
+            <!-- Game card -->
+            <div
+              class="bg-white rounded-3xl shadow-lg p-6 sm:p-8 border border-mint/20"
+            >
+              <!-- Attempts bar -->
+              <div class="mb-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-body text-sm font-bold text-[#4A4A68]"
+                    >Attempts Left</span
+                  >
+                  <span
+                    class="font-display text-2xl text-mint"
+                    id="attempts-left"
+                    >5</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-gray-100 rounded-full h-3 overflow-hidden"
+                >
+                  <div
+                    id="attempts-bar"
+                    class="h-3 rounded-full bg-green-400 transition-all duration-500"
+                    style="width: 100%"
+                  ></div>
+                </div>
+              </div>
+              <!-- ./Attempts bar -->
+
+              <!-- Hint display -->
+              <div class="text-center mb-4">
+                <div id="hint" class="font-display text-2xl text-gray-400">
+                  Guess a number between 1 and 100
+                </div>
+              </div>
+              <!-- ./Hint display -->
+
+              <!-- Guess history -->
+              <div
+                id="guess-history"
+                class="flex flex-wrap gap-2 justify-center mb-5 min-h-[36px]"
+              ></div>
+              <!-- ./Guess history -->
+
+              <!-- Input + submit -->
+              <div class="flex gap-3">
+                <input
+                  id="guess-input"
+                  type="number"
+                  min="1"
+                  max="100"
+                  placeholder="Your guess..."
+                  class="guess-input form-input flex-1 border-2 border-mint/40 rounded-xl px-4 py-3 font-display text-2xl text-center text-[#4A4A68] placeholder-gray-300 bg-cream"
+                />
+                <button
+                  id="submit-btn"
+                  class="bg-mint text-white font-display text-xl px-6 py-3 rounded-xl shadow-md hover:bg-opacity-90 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer whitespace-nowrap"
+                >
+                  Guess! 🎯
+                </button>
+              </div>
+              <!-- ./Input + submit -->
+
+              <!-- Round result + new round -->
+              <div
+                id="round-result"
+                class="hidden text-center mt-6 font-display text-xl text-[#4A4A68] bg-lemon/30 border border-lemon/50 rounded-2xl py-4 px-6"
+              >
+                Play again?
+              </div>
+
+              <div class="text-center mt-4">
+                <button
+                  id="new-round-btn"
+                  class="bg-lemon/40 hover:bg-lemon text-amber-700 font-body font-bold text-sm px-6 py-2 rounded-full border border-lemon transition-colors cursor-pointer"
+                >
+                  🔄 New Round
+                </button>
+              </div>
+              <!-- ./Round result + new round -->
+            </div>
+            <!-- ./Game card -->
           </div>
+
           <!-- ./Main game panel -->
         </div>
       </section>
-      <!-- ══ ./GAME SECTION ════ -->
+      <!-- ══ ./GAME SECTION ═══= -->
     </main>
 
     <footer
