@@ -4,6 +4,12 @@
 
 ---
 
+## Live Demo
+
+Check it out here: [https://revou-fsse-feb26.github.io/milestone-2-leogurning-1/]
+
+---
+
 ## Overview
 
 **LeonFun** is a multi-page gaming website designed for casual gamers who want to enjoy simple, entertaining browser-based games. The platform features a visually appealing landing page, three fully interactive JavaScript games, a contact form, and persistent leaderboards powered by `localStorage`.
@@ -118,6 +124,9 @@ leonfun/
 > # VS Code
 > Install the "Live Server" extension and click "Go Live"
 > ```
+
+4. **📂 Deployment:**
+   This project using Github Pages feature. The Build and Deployment setting has been completed and it will deploy from main branch automatically if there is new push / code updated.
 
 ---
 
