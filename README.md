@@ -49,7 +49,7 @@ leonfun/
 - Contact form with full validation and modal feedback
 - Footer with copyright, company name, and email
 
-### Number Guessing (`games/number-guessing.html`)
+### Number Guessing (`pages/number-guessing.html`)
 
 - Random secret number (1–100) per round
 - 5-attempt limit with a colour-coded progress bar (green → yellow → red)
@@ -58,11 +58,16 @@ leonfun/
 - Per-round result message with "New Round" button
 - Leaderboard ranked by **total rounds won**
 
-### Rock, Paper, Scissors (`games/rock-paper-scissors.html`)
+### Rock, Paper, Scissors (`pages/rock-paper-scissors.html`)
 
-<Explained later>
+- Nickname gate before gameplay begins
+- Real-time win / draw / loss score tracker
+- Animated emoji reveal for each round
+- "Pop-in" animation on result display
+- Leaderboard ranked by **most wins** per player
+- Reset session scores button
 
-### Avoid Falling Objects (`games/avoid-falling-objects.html`)
+### Avoid Falling Objects (`pages/avoid-falling-objects.html`)
 
 <Explained later>
 
