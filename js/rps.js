@@ -43,6 +43,62 @@ nickInput?.addEventListener("keydown", (e) => {
   if (e.key === "Enter") startBtn.click();
 });
 
+/* ─── Choice buttons ─────────────────────────────────────────── */
+document.querySelectorAll(".rps-btn").forEach((btn) => {
+  btn.addEventListener("click", () => playRPSGame(btn.dataset.choice));
+});
+
+/* ─── Core rps logic ────────────────────────────────────────── */
+function playRPSGame(playerChoice) {
+  const cpuChoice = CHOICES[Math.floor(Math.random() * CHOICES.length)];
+
+  // Animate: show spinning question mark then reveal
+  playerEmojiEl.textContent = "❓";
+  cpuEmojiEl.textContent = "❓";
+
+  setTimeout(() => {
+    playerEmojiEl.textContent = EMOJI[playerChoice];
+    cpuEmojiEl.textContent = EMOJI[cpuChoice];
+    playerEmojiEl.classList.add("pop-in");
+    cpuEmojiEl.classList.add("pop-in");
+    setTimeout(() => {
+      playerEmojiEl.classList.remove("pop-in");
+      cpuEmojiEl.classList.remove("pop-in");
+    }, 400);
+  }, 300);
+
+  const outcome = getRPSOutcome(playerChoice, cpuChoice);
+
+  if (outcome === "win") {
+    wins++;
+    setResult(`🎉 You Win!`, "text-green-600");
+  } else if (outcome === "lose") {
+    losses++;
+    setResult(`😢 CPU Wins!`, "text-red-500");
+  } else {
+    draws++;
+    setResult(`🤝 It's a Draw!`, "text-yellow-600");
+  }
+
+  winsEl.textContent = wins;
+  lossesEl.textContent = losses;
+  drawsEl.textContent = draws;
+
+  // Save best wins tally
+  saveScore(GAME_KEY, nickname, wins);
+  renderLeaderboard(GAME_KEY, "leaderboard-list", nickname);
+}
+
+function getRPSOutcome(player, cpu) {
+  if (player === cpu) return "draw";
+  return BEATS[player] === cpu ? "win" : "lose";
+}
+
+function setResult(text, colorClass) {
+  resultEl.textContent = text;
+  resultEl.className = `font-display text-3xl my-3 transition-all ${colorClass}`;
+}
+
 // Instructions Reveal Toggle
 const toggle = document.getElementById("instructions-toggle");
 const body = document.getElementById("instructions-body");
