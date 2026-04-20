@@ -60,7 +60,94 @@
       <!-- spacer -->
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 py-8"></main>
+    <main class="max-w-5xl mx-auto px-4 py-8">
+      <!-- ══ NICKNAME INPUT SECTION ════ -->
+      <section
+        id="nickname-section"
+        class="flex items-center justify-center min-h-[60vh]"
+      >
+        <div
+          class="bg-white rounded-3xl shadow-xl p-10 max-w-md w-full text-center border-2 border-pink/20"
+        >
+          <h2 class="font-display text-4xl gradient-text mb-2">
+            Rock, Paper, Scissors
+          </h2>
+          <p class="font-body text-[#6B6B8A] mb-8 text-sm leading-relaxed">
+            Challenge the CPU! Win rounds to rack up your score and climb the
+            leaderboard.
+          </p>
+
+          <label
+            for="nickname-input"
+            class="block font-body font-bold text-[#4A4A68] mb-2 text-left text-sm"
+          >
+            Your Nickname
+          </label>
+          <input
+            id="nickname-input"
+            type="text"
+            maxlength="20"
+            placeholder="e.g. LeonTheWinner"
+            class="form-input w-full border-2 border-lavender/40 rounded-xl px-4 py-3 font-body text-[#4A4A68] placeholder-gray-300 bg-cream mb-6 text-center text-lg"
+          />
+
+          <button
+            id="start-btn"
+            class="w-full bg-pink text-white font-display text-2xl py-4 rounded-full shadow-lg hover:bg-opacity-90 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+          >
+            Let's Play! 🕹️
+          </button>
+
+          <!-- Instructions -->
+          <div
+            class="mt-8 text-left bg-pink/5 rounded-2xl p-5 border border-pink/15"
+          >
+            <h3 class="font-display text-xl text-pink mb-3">📖 How to Play</h3>
+            <ul class="font-body text-sm text-[#6B6B8A] space-y-1.5">
+              <li>🪨 <strong>Rock</strong> beats ✂️ Scissors</li>
+              <li>📄 <strong>Paper</strong> beats 🪨 Rock</li>
+              <li>✂️ <strong>Scissors</strong> beats 📄 Paper</li>
+              <li>🔁 Same choice = Draw</li>
+              <li>
+                🏆 Your <strong>win count</strong> is saved to the leaderboard
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- ══ ./NICKNAME INPUT SECTION ════ -->
+
+      <!-- ══======= GAME SECTION ═==══════ -->
+      <section id="game-section" class="hidden">
+        <!-- GRID GAME AREA -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Main game panel -->
+          <div class="lg:col-span-2 space-y-5">
+            <!-- Welcome banner -->
+            <div
+              class="bg-white rounded-2xl shadow-md px-6 py-4 flex items-center justify-between border border-pink/15"
+            >
+              <div>
+                <span class="font-body text-sm text-muted font-semibold"
+                  >Playing as</span
+                >
+                <div class="font-display text-2xl text-pink" id="nick-display">
+                  Player
+                </div>
+              </div>
+              <button
+                id="reset-btn"
+                class="bg-lemon/50 hover:bg-lemon text-amber-700 font-body font-bold text-sm px-4 py-2 rounded-full transition-colors cursor-pointer border border-lemon"
+              >
+                🔄 Reset Scores
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- ./GRID GAME AREA -->
+      </section>
+      <!-- ══=======./GAME SECTION ═==══════ -->
+    </main>
 
     <!-- Footer strip -->
     <footer
