@@ -184,6 +184,68 @@
               </div>
             </div>
             <!-- ./Score tracker -->
+
+            <!-- Battle area -->
+            <div
+              class="bg-white rounded-3xl shadow-lg p-6 border border-lavender/20"
+            >
+              <!-- Emoji display -->
+              <div class="flex items-center justify-around mb-2">
+                <div class="text-center">
+                  <div
+                    class="font-body text-xs font-bold text-muted uppercase tracking-wide mb-2"
+                  >
+                    You
+                  </div>
+                  <div id="player-emoji" class="text-7xl select-none">❓</div>
+                </div>
+                <div class="font-display text-4xl text-lavender/40">VS</div>
+                <div class="text-center">
+                  <div
+                    class="font-body text-xs font-bold text-muted uppercase tracking-wide mb-2"
+                  >
+                    CPU
+                  </div>
+                  <div id="cpu-emoji" class="text-7xl select-none">❓</div>
+                </div>
+              </div>
+
+              <!-- Result text -->
+              <div
+                id="result-text"
+                class="font-display text-2xl text-gray-400 text-center my-3"
+              >
+                Pick your move!
+              </div>
+
+              <!-- Choice buttons -->
+              <div class="grid grid-cols-3 gap-4 mt-4">
+                <button
+                  data-choice="rock"
+                  class="rps-btn bg-gradient-to-br from-pink/10 to-pink/20 border-2 border-pink/30 rounded-2xl py-5 flex flex-col items-center gap-1 shadow-sm hover:border-pink cursor-pointer"
+                >
+                  <span class="text-5xl">🪨</span>
+                  <span class="font-display text-lg text-[#4A4A68]">Rock</span>
+                </button>
+                <button
+                  data-choice="paper"
+                  class="rps-btn bg-gradient-to-br from-lavender/10 to-lavender/20 border-2 border-lavender/30 rounded-2xl py-5 flex flex-col items-center gap-1 shadow-sm hover:border-lavender cursor-pointer"
+                >
+                  <span class="text-5xl">📄</span>
+                  <span class="font-display text-lg text-[#4A4A68]">Paper</span>
+                </button>
+                <button
+                  data-choice="scissors"
+                  class="rps-btn bg-gradient-to-br from-mint/10 to-mint/20 border-2 border-mint/30 rounded-2xl py-5 flex flex-col items-center gap-1 shadow-sm hover:border-mint cursor-pointer"
+                >
+                  <span class="text-5xl">✂️</span>
+                  <span class="font-display text-lg text-[#4A4A68]"
+                    >Scissors</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- ./Battle area -->
           </div>
         </div>
         <!-- ./GRID GAME AREA -->
