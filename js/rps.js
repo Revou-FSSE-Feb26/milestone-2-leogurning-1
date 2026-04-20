@@ -43,5 +43,15 @@ nickInput?.addEventListener("keydown", (e) => {
   if (e.key === "Enter") startBtn.click();
 });
 
+// Instructions Reveal Toggle
+const toggle = document.getElementById("instructions-toggle");
+const body = document.getElementById("instructions-body");
+const chev = document.getElementById("instructions-chevron");
+toggle.addEventListener("click", () => {
+  const open = body.style.maxHeight !== "0px" && body.style.maxHeight !== "";
+  body.style.maxHeight = open ? "0" : body.scrollHeight + "px";
+  chev.style.transform = open ? "rotate(0deg)" : "rotate(180deg)";
+});
+
 // Footer year auto-update
 document.getElementById("year").textContent = new Date().getFullYear();

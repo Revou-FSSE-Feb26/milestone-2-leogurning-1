@@ -246,7 +246,62 @@
               </div>
             </div>
             <!-- ./Battle area -->
+
+            <!-- Collapsible Game Instructions -->
+            <div
+              class="rounded-2xl border-2 border-pink/25 overflow-hidden shadow-sm"
+            >
+              <button
+                id="instructions-toggle"
+                class="w-full flex items-center justify-between px-5 py-3 bg-pink/10 hover:bg-pink/20 transition-colors duration-200 cursor-pointer text-left"
+              >
+                <span class="font-display text-xl text-pink"
+                  >📖 How to Play</span
+                >
+                <span
+                  id="instructions-chevron"
+                  class="text-pink text-xl font-bold transition-transform duration-300"
+                  >▾</span
+                >
+              </button>
+              <div
+                id="instructions-body"
+                class="bg-pink/5 px-5 overflow-hidden transition-all duration-300"
+                style="max-height: 0"
+              >
+                <ul class="font-body text-sm text-[#6B6B8A] space-y-2 py-4">
+                  <li class="flex items-center gap-2">
+                    🪨 <span><strong>Rock</strong> beats ✂️ Scissors</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    📄 <span><strong>Paper</strong> beats 🪨 Rock</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    ✂️ <span><strong>Scissors</strong> beats 📄 Paper</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    🔁 <span>Same choice = Draw</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    🏆
+                    <span
+                      >Your <strong>win count</strong> is saved to the
+                      leaderboard automatically</span
+                    >
+                  </li>
+                  <li class="flex items-center gap-2">
+                    💡
+                    <span
+                      >Use <strong>Reset Scores</strong> to start your session
+                      count fresh (leaderboard is unchanged)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- ./Collapsible Game Instructions -->
           </div>
+          <!-- ./Main Game Panel  -->
         </div>
         <!-- ./GRID GAME AREA -->
       </section>
