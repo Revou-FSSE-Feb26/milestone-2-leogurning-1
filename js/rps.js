@@ -1,3 +1,4 @@
+// rps.js — Rock Paper Scissors Game Logic (ES Module)
 import { saveScore, renderLeaderboard, showModal } from "./utils.js";
 
 /* ─── Constants ──────────────────────────────────────────────── */
@@ -69,15 +70,21 @@ function playRPSGame(playerChoice) {
 
   const outcome = getRPSOutcome(playerChoice, cpuChoice);
 
-  if (outcome === "win") {
-    wins++;
-    setResult(`🎉 You Win!`, "text-green-600");
-  } else if (outcome === "lose") {
-    losses++;
-    setResult(`😢 CPU Wins!`, "text-red-500");
-  } else {
-    draws++;
-    setResult(`🤝 It's a Draw!`, "text-yellow-600");
+  switch (outcome) {
+    case "win":
+      wins++;
+      setResult(`🎉 You Win!`, "text-green-600");
+      break;
+    case "lose":
+      losses++;
+      setResult(`😢 CPU Wins!`, "text-red-500");
+      break;
+    case "draw":
+      draws++;
+      setResult(`🤝 It's a Draw!`, "text-yellow-600");
+      break;
+    default:
+      console.error("Unexpected outcome:", outcome);
   }
 
   winsEl.textContent = wins;
