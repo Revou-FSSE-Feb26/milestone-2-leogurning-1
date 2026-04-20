@@ -99,6 +99,20 @@ function setResult(text, colorClass) {
   resultEl.className = `font-display text-3xl my-3 transition-all ${colorClass}`;
 }
 
+/* ─── Reset button ───────────────────────────────────────────── */
+document.getElementById("reset-btn")?.addEventListener("click", () => {
+  wins = 0;
+  losses = 0;
+  draws = 0;
+  winsEl.textContent = 0;
+  lossesEl.textContent = 0;
+  drawsEl.textContent = 0;
+  playerEmojiEl.textContent = "❓";
+  cpuEmojiEl.textContent = "❓";
+  resultEl.textContent = "Pick your move!";
+  resultEl.className = "font-display text-2xl my-3 text-gray-400";
+});
+
 // Instructions Reveal Toggle
 const toggle = document.getElementById("instructions-toggle");
 const body = document.getElementById("instructions-body");
