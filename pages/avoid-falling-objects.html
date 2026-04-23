@@ -189,8 +189,43 @@
                 <div id="player">🧑</div>
               </div>
               <!-- ./Actual game area -->
+
+              <!-- Game over overlay -->
+              <div
+                id="game-over-screen"
+                class="hidden absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-[20px]"
+                style="
+                  background: rgba(255, 255, 255, 0.92);
+                  backdrop-filter: blur(6px);
+                "
+              >
+                <div class="text-6xl">💥</div>
+                <h2 class="font-display text-4xl text-pink">Game Over!</h2>
+                <p class="font-body text-[#6B6B8A]">Your score:</p>
+                <div
+                  id="final-score"
+                  class="font-display text-6xl text-lavender"
+                >
+                  0
+                </div>
+                <button
+                  id="restart-btn"
+                  class="bg-pink text-white font-display text-2xl px-10 py-3 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-200 cursor-pointer mt-2"
+                >
+                  🔄 Play Again
+                </button>
+              </div>
+              <!-- ./Game over overlay -->
             </div>
             <!-- ./Game area wrapper -->
+
+            <!-- Desktop controls reminder -->
+            <div
+              class="hidden sm:block bg-lemon/20 rounded-2xl p-4 border border-lemon/40 text-sm font-body text-amber-800"
+            >
+              ⌨️ <strong>Controls:</strong> Arrow Keys (← →) or A / D to move
+              your character
+            </div>
           </div>
           <!-- ./Game panel -->
           <!-- Leaderboard -->
