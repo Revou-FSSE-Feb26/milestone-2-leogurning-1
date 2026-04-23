@@ -154,7 +154,42 @@
             <!-- ./Player banner -->
 
             <!-- Game area wrapper -->
-            <div class="relative"></div>
+            <div class="relative">
+              <!-- Pre-game overlay -->
+              <div
+                id="pre-game"
+                class="flex flex-col items-center justify-center gap-5 py-16"
+                style="
+                  background: linear-gradient(
+                    180deg,
+                    #e8f4fd 0%,
+                    #f3e8ff 60%,
+                    #ffe8f5 100%
+                  );
+                  border: 3px solid #d4b8f0;
+                  border-radius: 20px;
+                  min-height: 480px;
+                "
+              >
+                <div class="text-7xl float-1">🧑</div>
+                <p class="font-body text-[#6B6B8A] text-center px-6 text-sm">
+                  Objects will fall from the top. Move your character left and
+                  right to avoid them!
+                </p>
+                <button
+                  id="play-btn"
+                  class="bg-lavender text-white font-display text-2xl px-10 py-4 rounded-full shadow-lg hover:bg-opacity-90 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+                >
+                  ▶ Start Game
+                </button>
+              </div>
+              <!-- ./Pre-game overlay -->
+              <!-- Actual game area -->
+              <div id="game-area" style="height: 480px; display: none">
+                <div id="player">🧑</div>
+              </div>
+              <!-- ./Actual game area -->
+            </div>
             <!-- ./Game area wrapper -->
           </div>
           <!-- ./Game panel -->
