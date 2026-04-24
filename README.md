@@ -69,7 +69,12 @@ leonfun/
 
 ### Avoid Falling Objects (`pages/avoid-falling-objects.html`)
 
-<Explained later>
+- `requestAnimationFrame`-based game loop for smooth 60fps gameplay
+- Player character controlled by keyboard (← → / A D)
+- On-screen ◀ ▶ buttons for small screens or for mobile players
+- Progressive difficulty: spawn rate and fall speed increase over time
+- Collision detection with a forgiveness inset
+- Leaderboard ranked by **best survival score**
 
 ### Leaderboard & Profiles (all game pages)
 
