@@ -219,12 +219,97 @@
             </div>
             <!-- ./Game area wrapper -->
 
+            <!-- Mobile controls -->
+            <div class="flex gap-4 sm:hidden">
+              <button
+                id="btn-left"
+                class="flex-1 bg-lavender/20 border-2 border-lavender/40 text-lavender font-display text-4xl py-5 rounded-2xl select-none active:bg-lavender/40 cursor-pointer"
+                aria-label="Move Left"
+              >
+                ◀
+              </button>
+              <button
+                id="btn-right"
+                class="flex-1 bg-lavender/20 border-2 border-lavender/40 text-lavender font-display text-4xl py-5 rounded-2xl select-none active:bg-lavender/40 cursor-pointer"
+                aria-label="Move Right"
+              >
+                ▶
+              </button>
+            </div>
+
             <!-- Desktop controls reminder -->
             <div
               class="hidden sm:block bg-lemon/20 rounded-2xl p-4 border border-lemon/40 text-sm font-body text-amber-800"
             >
               ⌨️ <strong>Controls:</strong> Arrow Keys (← →) or A / D to move
               your character
+            </div>
+
+            <!-- Collapsible Instructions -->
+            <div
+              class="rounded-2xl border-2 border-lavender/25 overflow-hidden shadow-sm"
+            >
+              <button
+                id="instructions-toggle"
+                class="w-full flex items-center justify-between px-5 py-3 bg-lavender/10 hover:bg-lavender/20 transition-colors duration-200 cursor-pointer text-left"
+              >
+                <span class="font-display text-xl text-lavender"
+                  >📖 How to Play</span
+                >
+                <span
+                  id="instructions-chevron"
+                  class="text-lavender text-xl font-bold transition-transform duration-300"
+                  >▾</span
+                >
+              </button>
+              <div
+                id="instructions-body"
+                class="bg-lavender/5 px-5 overflow-hidden transition-all duration-300"
+                style="max-height: 0"
+              >
+                <ul class="font-body text-sm text-[#6B6B8A] space-y-2 py-4">
+                  <li class="flex items-start gap-2">
+                    ⌨️
+                    <span
+                      >Use <strong>← → arrow keys</strong> or
+                      <strong>A / D</strong> to move left and right</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    📱
+                    <span>On mobile: tap the <strong>◀ ▶ buttons</strong></span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    ⭐
+                    <span
+                      >Avoid <strong>all falling objects</strong> — one hit ends
+                      the game immediately</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    📈
+                    <span
+                      >Objects fall
+                      <strong>faster and more frequently</strong> the longer you
+                      survive</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    ⏱️
+                    <span
+                      >Your <strong>score = time survived</strong> (in tenths of
+                      a second)</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    🏆
+                    <span
+                      >Only your <strong>personal best</strong> is kept on the
+                      leaderboard</span
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <!-- ./Game panel -->
