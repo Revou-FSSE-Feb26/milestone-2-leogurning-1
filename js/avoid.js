@@ -62,7 +62,7 @@ startBtn?.addEventListener("click", () => {
   nickDisplay.textContent = nickname;
   nicknameSection.classList.add("hidden");
   gameSection.classList.remove("hidden");
-  // Start the game
+  renderLeaderboard(GAME_KEY, "leaderboard-list", nickname);
 });
 
 nickInput?.addEventListener("keydown", (e) => {
@@ -195,6 +195,9 @@ function endGame() {
 
   finalScoreEl.textContent = score;
   gameOverEl.classList.remove("hidden");
+
+  saveScore(GAME_KEY, nickname, score);
+  renderLeaderboard(GAME_KEY, "leaderboard-list", nickname);
 }
 
 /* ─── Keyboard controls ──────────────────────────────────────── */
@@ -208,6 +211,48 @@ document.addEventListener("keyup", (e) => {
   if (e.key === "ArrowRight" || e.key === "d" || e.key === "D")
     moveRight = false;
 });
+
+/* ─── Mobile touch controls ──────────────────────────────────── */
+function bindBtn(id, setLeft, setRight) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.addEventListener("mousedown", () => {
+    setLeft(true);
+    setRight(false);
+  });
+  el.addEventListener("mouseup", () => {
+    setLeft(false);
+    setRight(false);
+  });
+  el.addEventListener("mouseleave", () => {
+    setLeft(false);
+    setRight(false);
+  });
+  el.addEventListener(
+    "touchstart",
+    (e) => {
+      e.preventDefault();
+      setLeft(true);
+      setRight(false);
+    },
+    { passive: false },
+  );
+  el.addEventListener("touchend", () => {
+    setLeft(false);
+    setRight(false);
+  });
+}
+
+bindBtn(
+  "btn-left",
+  (v) => (moveLeft = v),
+  (v) => (moveRight = v),
+);
+bindBtn(
+  "btn-right",
+  (v) => (moveRight = v),
+  (v) => (moveLeft = v),
+);
 
 // Instructions Reveal Toggle
 const toggle = document.getElementById("instructions-toggle");
