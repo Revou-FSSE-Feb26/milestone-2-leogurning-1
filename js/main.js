@@ -1,11 +1,12 @@
 // LeonFun Main JS for Homepage interactions and animations
-
+// Importing the showModal function from utils.js to display modal dialogs for user feedback
 import { showModal } from "./utils.js";
 
 /* ─── Navigation ─────────────────────────────────────────────── */
 const navToggle = document.getElementById("nav-toggle");
 const navMobile = document.getElementById("nav-mobile");
 
+// Toggle mobile nav visibility when the hamburger icon is clicked
 navToggle?.addEventListener("click", () => {
   navMobile?.classList.toggle("hidden");
 });
@@ -17,6 +18,11 @@ navMobile?.querySelectorAll("a").forEach((a) => {
 
 /* ─── Navbar scroll shadow ────────────────────────────────────── */
 const navbar = document.getElementById("navbar");
+
+/**
+ * Add a shadow and background to the navbar when scrolling down for better visibility,
+ * and remove it when at the top of the page.
+ */
 window.addEventListener("scroll", () => {
   if (!navbar) return;
   if (window.scrollY > 40) {
@@ -28,6 +34,11 @@ window.addEventListener("scroll", () => {
 
 /* ─── Smooth Scroll ───────────────────────────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  /**
+   * For each anchor link that points to an ID on the page,
+   * add a click event listener that smoothly scrolls to the target section instead of jumping directly.
+   * Also close the mobile nav if it's open.
+   */
   anchor.addEventListener("click", (e) => {
     const target = document.querySelector(anchor.getAttribute("href"));
     if (!target) return;
@@ -37,7 +48,11 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-/* ─── Scroll-reveal animations ────────────────────────────────── */
+/**
+ * Scroll-reveal animations
+ * Use the Intersection Observer API to add a "revealed" class to elements with the "scroll-reveal" class when they come into view, triggering CSS animations.
+ * Each element is observed only once for performance. The threshold and root margin are set to trigger the reveal slightly before the element is fully in view.
+ */
 const io = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -49,12 +64,15 @@ const io = new IntersectionObserver(
   },
   { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
 );
-
+// Observe all elements with the "scroll-reveal" class for the scroll-reveal animation effect.
 document.querySelectorAll(".scroll-reveal").forEach((el) => io.observe(el));
 
 /* ─── Contact Form ────────────────────────────────────────────── */
 const contactForm = document.getElementById("contact-form");
 
+/**
+ * Handle contact form submission with validation and user feedback. When the form is submitted, prevent the default behavior and validate the input fields.
+ */
 contactForm?.addEventListener("submit", (e) => {
   e.preventDefault();
 

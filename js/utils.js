@@ -8,8 +8,10 @@
  */
 export function showModal(title, message, type = "info") {
   document.getElementById("lf-modal")?.remove();
-
+  //Define the modal type (success, error, or info) and corresponding styles and icons
   const icon = type === "success" ? "🎉" : type === "error" ? "⚠️" : "ℹ️";
+
+  // Define the color palette for each modal type, including border, background, title text, and button styles.
   const palette = {
     success: {
       wrap: "border-green-300 bg-green-50",
@@ -29,6 +31,10 @@ export function showModal(title, message, type = "info") {
   };
   const p = palette[type] ?? palette.info;
 
+  /**
+   * Create the modal overlay element with the appropriate structure and styles based on the type, then append it to the body.
+   * The modal includes an icon, title, message, and an "OK" button to close it. Clicking outside the modal card also closes it.
+   */
   const overlay = document.createElement("div");
   overlay.id = "lf-modal";
   overlay.className =
@@ -45,6 +51,7 @@ export function showModal(title, message, type = "info") {
     </div>`;
   document.body.appendChild(overlay);
 
+  // Add event listeners to close the modal when the button is clicked or when clicking outside the card
   const close = () => overlay.remove();
   document.getElementById("lf-modal-ok").addEventListener("click", close);
   overlay.addEventListener("click", (e) => {
@@ -58,6 +65,7 @@ export function showModal(title, message, type = "info") {
  * @returns {Array<{nickname:string, score:number, date:string}>}
  */
 export function getScores(gameKey) {
+  // Retrieve the scores for the specified game from localStorage, return empty array if not found or on error
   try {
     const raw = localStorage.getItem(`leonfun_${gameKey}_scores`);
     return raw ? JSON.parse(raw) : [];
@@ -75,12 +83,14 @@ export function getScores(gameKey) {
  * @returns {Array} sorted scores array
  */
 export function saveScore(gameKey, nickname, score) {
+  // Get existing scores, find if the player already has a score, and update or add the entry accordingly.
   const scores = getScores(gameKey);
   console.log("Name:", nickname, "Score:", score);
   const idx = scores.findIndex(
     (s) => s.nickname.toLowerCase() === nickname.toLowerCase(),
   );
 
+  // If the player already has a score, only update it if the new score is higher. Otherwise, add a new entry.
   if (idx !== -1) {
     if (score > scores[idx].score) {
       scores[idx].score = score;
@@ -94,6 +104,7 @@ export function saveScore(gameKey, nickname, score) {
     });
   }
 
+  // Sort the scores in descending order and save back to localStorage, then return the sorted array.
   scores.sort((a, b) => b.score - a.score);
   localStorage.setItem(`leonfun_${gameKey}_scores`, JSON.stringify(scores));
   return scores;
@@ -105,6 +116,7 @@ export function saveScore(gameKey, nickname, score) {
  * @param {number} [limit=10]
  */
 export function getTopScores(gameKey, limit = 10) {
+  // Get all scores for the game, sort them in descending order, and return only the top 'limit' entries.
   return getScores(gameKey)
     .sort((a, b) => b.score - a.score)
     .slice(0, limit);
@@ -117,9 +129,11 @@ export function getTopScores(gameKey, limit = 10) {
  * @param {string} [currentNickname='']
  */
 export function renderLeaderboard(gameKey, containerId, currentNickname = "") {
+  // Get the container element by ID, if it doesn't exist, exit early.
   const container = document.getElementById(containerId);
   if (!container) return;
 
+  // Get the top scores for the game. If there are no scores, display a friendly message and exit.
   const scores = getTopScores(gameKey);
   if (!scores.length) {
     container.innerHTML = `
@@ -129,7 +143,13 @@ export function renderLeaderboard(gameKey, containerId, currentNickname = "") {
     return;
   }
 
+  // Define the medal emojis for the top three positions.
   const medals = ["🥇", "🥈", "🥉"];
+
+  /**
+   * Build the HTML for each score entry, highlighting the current player's entry if it exists, and inject it into the container.
+   * Also includes the player's rank (medal or #), nickname, score, and date. The nickname is escaped to prevent XSS.
+   */
   container.innerHTML = scores
     .map((s, i) => {
       const isCurrent =
@@ -154,6 +174,7 @@ export function renderLeaderboard(gameKey, containerId, currentNickname = "") {
 
 /** Prevent XSS in user-supplied strings. */
 export function escapeHtml(str) {
+  // Convert special characters to HTML entities to prevent XSS attacks when rendering user-supplied strings in the DOM.
   return String(str)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
