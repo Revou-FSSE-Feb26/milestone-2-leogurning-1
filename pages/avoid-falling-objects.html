@@ -27,6 +27,8 @@
               lemon: "#FFE082",
               sky: "#A8DADC",
               cream: "#FFF5F9",
+              greyer: "#4A4A68",
+              grey: "#6B6B8A",
             },
             fontFamily: {
               display: ['"Fredoka One"', "cursive"],
@@ -39,7 +41,7 @@
 
     <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body class="font-body bg-cream text-[#4A4A68] min-h-screen">
+  <body class="font-body bg-cream text-greyer min-h-screen">
     <!-- ─── Top bar ─── -->
     <header
       class="bg-white/80 backdrop-blur-sm border-b border-lavender/20 px-6 py-3 flex items-center justify-between sticky top-0 z-30 shadow-sm"
@@ -71,14 +73,14 @@
           <h2 class="font-display text-4xl gradient-text mb-2">
             Avoid Falling Objects
           </h2>
-          <p class="font-body text-[#6B6B8A] mb-8 text-sm leading-relaxed">
+          <p class="font-body text-grey mb-8 text-sm leading-relaxed">
             Dodge everything falling from above! The longer you survive, the
             higher your score.
           </p>
 
           <label
             for="nickname-input"
-            class="block font-body font-bold text-[#4A4A68] mb-2 text-left text-sm"
+            class="block font-body font-bold text-greyer mb-2 text-left text-sm"
           >
             Your Nickname
           </label>
@@ -87,7 +89,7 @@
             type="text"
             maxlength="20"
             placeholder="e.g. LeonMaster"
-            class="form-input w-full border-2 border-lavender/40 rounded-xl px-4 py-3 font-body text-[#4A4A68] placeholder-gray-300 bg-cream mb-6 text-center text-lg"
+            class="form-input w-full border-2 border-lavender/40 rounded-xl px-4 py-3 font-body text-greyer placeholder-gray-300 bg-cream mb-6 text-center text-lg"
           />
 
           <button
@@ -104,7 +106,7 @@
             <h3 class="font-display text-xl text-lavender mb-3">
               📖 How to Play
             </h3>
-            <ul class="font-body text-sm text-[#6B6B8A] space-y-1.5">
+            <ul class="font-body text-sm text-grey space-y-1.5">
               <li>
                 ⌨️ Use <strong>← →</strong> arrow keys or
                 <strong>A / D</strong> to move
@@ -172,7 +174,7 @@
                 "
               >
                 <div class="text-7xl float-1">🧑</div>
-                <p class="font-body text-[#6B6B8A] text-center px-6 text-sm">
+                <p class="font-body text-grey text-center px-6 text-sm">
                   Objects will fall from the top. Move your character left and
                   right to avoid them!
                 </p>
@@ -201,7 +203,7 @@
               >
                 <div class="text-6xl">💥</div>
                 <h2 class="font-display text-4xl text-pink">Game Over!</h2>
-                <p class="font-body text-[#6B6B8A]">Your score:</p>
+                <p class="font-body text-grey">Your score:</p>
                 <div
                   id="final-score"
                   class="font-display text-6xl text-lavender"
@@ -267,7 +269,7 @@
                 class="bg-lavender/5 px-5 overflow-hidden transition-all duration-300"
                 style="max-height: 0"
               >
-                <ul class="font-body text-sm text-[#6B6B8A] space-y-2 py-4">
+                <ul class="font-body text-sm text-grey space-y-2 py-4">
                   <li class="flex items-start gap-2">
                     ⌨️
                     <span
