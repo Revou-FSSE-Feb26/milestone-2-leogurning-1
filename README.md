@@ -23,6 +23,7 @@ leonfun/
 ├── index.html                        # Main landing page
 ├── css/
 │   └── style.css                     # Custom CSS (animations, game styles, theming)
+├── images/                           # Contains required image assets in the website and readme
 ├── js/
 │   ├── utils.js                      # Shared ES module (localStorage, modal, leaderboard)
 │   ├── main.js                       # Homepage interactions (nav, contact form, scroll reveal)
