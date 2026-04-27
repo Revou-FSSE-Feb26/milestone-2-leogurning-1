@@ -27,6 +27,8 @@
               lemon: "#FFE082",
               sky: "#A8DADC",
               cream: "#FFF5F9",
+              greyer: "#4A4A68",
+              grey: "#6B6B8A",
             },
             fontFamily: {
               display: ['"Fredoka One"', "cursive"],
@@ -39,7 +41,7 @@
 
     <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body class="font-body bg-cream text-[#4A4A68] min-h-screen">
+  <body class="font-body bg-cream text-greyer min-h-screen">
     <!-- ─── Top bar ─── -->
     <header
       class="bg-white/80 backdrop-blur-sm border-b border-pink/20 px-6 py-3 flex items-center justify-between sticky top-0 z-30 shadow-sm"
@@ -72,14 +74,14 @@
           <h2 class="font-display text-4xl gradient-text mb-2">
             Rock, Paper, Scissors
           </h2>
-          <p class="font-body text-[#6B6B8A] mb-8 text-sm leading-relaxed">
+          <p class="font-body text-grey mb-8 text-sm leading-relaxed">
             Challenge the CPU! Win rounds to rack up your score and climb the
             leaderboard.
           </p>
 
           <label
             for="nickname-input"
-            class="block font-body font-bold text-[#4A4A68] mb-2 text-left text-sm"
+            class="block font-body font-bold text-greyer mb-2 text-left text-sm"
           >
             Your Nickname
           </label>
@@ -88,7 +90,7 @@
             type="text"
             maxlength="20"
             placeholder="e.g. LeonTheWinner"
-            class="form-input w-full border-2 border-lavender/40 rounded-xl px-4 py-3 font-body text-[#4A4A68] placeholder-gray-300 bg-cream mb-6 text-center text-lg"
+            class="form-input w-full border-2 border-lavender/40 rounded-xl px-4 py-3 font-body text-greyer placeholder-gray-300 bg-cream mb-6 text-center text-lg"
           />
 
           <button
@@ -103,7 +105,7 @@
             class="mt-8 text-left bg-pink/5 rounded-2xl p-5 border border-pink/15"
           >
             <h3 class="font-display text-xl text-pink mb-3">📖 How to Play</h3>
-            <ul class="font-body text-sm text-[#6B6B8A] space-y-1.5">
+            <ul class="font-body text-sm text-grey space-y-1.5">
               <li>🪨 <strong>Rock</strong> beats ✂️ Scissors</li>
               <li>📄 <strong>Paper</strong> beats 🪨 Rock</li>
               <li>✂️ <strong>Scissors</strong> beats 📄 Paper</li>
@@ -225,23 +227,21 @@
                   class="rps-btn bg-gradient-to-br from-pink/10 to-pink/20 border-2 border-pink/30 rounded-2xl py-5 flex flex-col items-center gap-1 shadow-sm hover:border-pink cursor-pointer"
                 >
                   <span class="text-5xl">🪨</span>
-                  <span class="font-display text-lg text-[#4A4A68]">Rock</span>
+                  <span class="font-display text-lg text-greyer">Rock</span>
                 </button>
                 <button
                   data-choice="paper"
                   class="rps-btn bg-gradient-to-br from-lavender/10 to-lavender/20 border-2 border-lavender/30 rounded-2xl py-5 flex flex-col items-center gap-1 shadow-sm hover:border-lavender cursor-pointer"
                 >
                   <span class="text-5xl">📄</span>
-                  <span class="font-display text-lg text-[#4A4A68]">Paper</span>
+                  <span class="font-display text-lg text-greyer">Paper</span>
                 </button>
                 <button
                   data-choice="scissors"
                   class="rps-btn bg-gradient-to-br from-mint/10 to-mint/20 border-2 border-mint/30 rounded-2xl py-5 flex flex-col items-center gap-1 shadow-sm hover:border-mint cursor-pointer"
                 >
                   <span class="text-5xl">✂️</span>
-                  <span class="font-display text-lg text-[#4A4A68]"
-                    >Scissors</span
-                  >
+                  <span class="font-display text-lg text-greyer">Scissors</span>
                 </button>
               </div>
             </div>
@@ -269,7 +269,7 @@
                 class="bg-pink/5 px-5 overflow-hidden transition-all duration-300"
                 style="max-height: 0"
               >
-                <ul class="font-body text-sm text-[#6B6B8A] space-y-2 py-4">
+                <ul class="font-body text-sm text-grey space-y-2 py-4">
                   <li class="flex items-center gap-2">
                     🪨 <span><strong>Rock</strong> beats ✂️ Scissors</span>
                   </li>
