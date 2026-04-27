@@ -49,6 +49,8 @@ leonfun/
 - Contact form with full validation and modal feedback
 - Footer with copyright, company name, and email
 
+  <img src="images/index1.png" height="128"> -- <img src="images/index2.png" height="128">
+
 ### Number Guessing (`pages/number-guessing.html`)
 
 - Random secret number (1–100) per round
@@ -57,6 +59,8 @@ leonfun/
 - Guess history displayed as coloured tags (↑ / ↓ / ✓)
 - Per-round result message with "New Round" button
 - Leaderboard ranked by **total rounds won**
+
+    <img src="images/guess.png" height="128">
 
 ### Rock, Paper, Scissors (`pages/rock-paper-scissors.html`)
 
@@ -67,6 +71,8 @@ leonfun/
 - Leaderboard ranked by **most wins** per player
 - Reset session scores button
 
+    <img src="images/rps.png" height="128">
+
 ### Avoid Falling Objects (`pages/avoid-falling-objects.html`)
 
 - `requestAnimationFrame`-based game loop for smooth 60fps gameplay
@@ -76,6 +82,8 @@ leonfun/
 - Collision detection with a forgiveness inset
 - Leaderboard ranked by **best survival score**
 
+    <img src="images/avoid.png" height="128">
+
 ### Leaderboard & Profiles (all game pages)
 
 - Nickname prompt before every game
@@ -84,12 +92,16 @@ leonfun/
 - Top 10 players displayed, with the current player highlighted in yellow
 - Medal emojis 🥇🥈🥉 for the top three spots
 
+    <img src="images/ldrboard.png" height="128">
+
 ### Contact Form
 
 - Fields: Name, Email (validated), Message (textarea)
 - Empty-field check shows an error modal
 - Successful submission logs data to console and shows a success modal
 - Form resets after successful submission
+
+    <img src="images/contactus.png" height="128">
 
 ---
 
