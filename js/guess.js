@@ -95,7 +95,10 @@ function newRound() {
   updateBar();
 }
 
-/* ─── Core guess logic ───────────────────────────────────────── */
+/**
+ * Handles the submission of a guess and updates the game state accordingly.
+ * @returns {void}
+ */
 function makeGuess() {
   // If the game is not active (e.g., after winning or losing), ignore guess submissions until a new round is started.
   if (!gameActive) return;
@@ -170,9 +173,9 @@ function setHint(text, colorClass) {
 }
 
 /**
- * Add guess number history function
- * @param {*} guess
- * @param {*} type
+ * Add guess number history function to display the past guesses with indicators showing if they were too low, too high, or correct.
+ * @param {number} guess - The guessed number
+ * @param {string} type - The type of the guess ("low", "high", or "exact")
  */
 function addHistory(guess, type) {
   // Construct parent span element and style to display the guess history
@@ -208,8 +211,8 @@ function updateBar() {
 }
 
 /**
- * Function end game round
- * @param {*} msg
+ * Function end game round and display the result message, disable input and submit button, and set game as inactive until a new round is started.
+ * @param {string} msg - The result message to display
  */
 function endRound(msg) {
   // Set game inactive, disable guess input and submit button after the game round finished
