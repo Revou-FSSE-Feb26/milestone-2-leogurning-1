@@ -143,6 +143,7 @@ document.getElementById("reset-btn")?.addEventListener("click", () => {
   playerEmojiEl.textContent = "❓";
   cpuEmojiEl.textContent = "❓";
   resultEl.textContent = "Pick your move!";
+  // Use necessary Tailwind classes to reset result element info to default styling
   resultEl.className = "font-display text-2xl my-3 text-gray-400";
 });
 
