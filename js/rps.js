@@ -128,6 +128,7 @@ function getRPSOutcome(player, cpu) {
 // Helper function to set the result message and color based on the game outcome
 function setResult(text, colorClass) {
   resultEl.textContent = text;
+  // Use necessary Tailwind classes to color the result info based on win/lose/draw
   resultEl.className = `font-display text-3xl my-3 transition-all ${colorClass}`;
 }
 
